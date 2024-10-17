@@ -1,3 +1,4 @@
+
 def add_item(inventory, name, price, quantity):
     """
     Add a new item to the inventory.
@@ -9,6 +10,7 @@ def add_item(inventory, name, price, quantity):
     quantity (str): The quantity of the item
     """
     inventory[name] = {"price": price, "quantity": quantity}
+
     print(f"{name} added to the inventory.")
 
 def remove_item(inventory, item_name):
@@ -54,26 +56,31 @@ inventory = {
     "apple": {"price": 0.50, "quantity": 100},
     "banana": {"price": 0.75, "quantity": 150}
 }
-
+#now you can always seen the in
 while True:
+    display_inventory(inventory)
     print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Display inventory\n5. Exit")
     choice = input("Enter your choice (1-5): ")
-
     if choice == "1":
+        display_inventory(inventory)
         name = input("Enter item name: ")
         price = input("Enter item price: ")
         quantity = int(input("Enter item quantity: "))
         add_item(inventory, name, price, quantity)
     elif choice == "2":
+        display_inventory(inventory)
         name = input("Enter item name to remove: ")
         remove_item(inventory, name)
     elif choice == "3":
+        display_inventory(inventory)
         name = input("Enter item name to update: ")
         quantity = input("Enter new quantity: ")
         update_quantity(inventory, name, quantity)
+        item = quantity
     elif choice == "4":
         display_inventory(inventory)
     elif choice == "5":
+        display_inventory(inventory)
         print("Exiting the program.")
         break
     else:
